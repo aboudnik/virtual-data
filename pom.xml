@@ -9,13 +9,19 @@
     <properties>
         <junit.version>4.12</junit.version>
         <joinery-dataframe.version>1.8</joinery-dataframe.version>
-        <aspectj.version>1.8.2</aspectj.version>
     </properties>
+
+    <developers>
+        <developer>
+            <name>Alexandre Boudnik</name>
+            <email>alexander.boudnik@gmail.com</email>
+        </developer>
+    </developers>
 
     <packaging>pom</packaging>
     <modules>
         <!--<module>joinery-dataframe</module>-->
-        <module>virtual-data-platform</module>
+        <module>data-platform</module>
     </modules>
 
 
@@ -39,12 +45,6 @@
                 <groupId>joinery</groupId>
                 <artifactId>joinery-dataframe</artifactId>
                 <version>${joinery-dataframe.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.aspectj</groupId>
-                <artifactId>aspectjrt</artifactId>
-                <version>${aspectj.version}</version>
             </dependency>
 
             <!--<dependency>-->
