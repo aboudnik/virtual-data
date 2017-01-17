@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>timeline</artifactId>
+        <groupId>org.boudnik</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>virtual-data-platform</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>joinery</groupId>
+            <artifactId>joinery-dataframe</artifactId>
+        </dependency>
+
+        <!--
+                <dependency>
+                    <groupId>com.facebook.presto</groupId>
+                    <artifactId>presto-parser</artifactId>
+                    <version>0.159</version>
+                </dependency>
+        -->
+
+    </dependencies>
+</project>

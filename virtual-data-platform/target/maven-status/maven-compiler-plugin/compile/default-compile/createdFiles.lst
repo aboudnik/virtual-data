@@ -1,0 +1,13 @@
+org\boudnik\data\platform\OBJ$STRING.class
+org\boudnik\data\platform\OBJ$INT.class
+org\boudnik\data\platform\DataBlock$Limitation$Range.class
+org\boudnik\data\platform\OBJ$Type.class
+org\boudnik\data\platform\Cache.class
+org\boudnik\data\platform\Metadata.class
+org\boudnik\data\platform\OBJ$DATE.class
+org\boudnik\data\platform\OBJ.class
+org\boudnik\data\platform\DataBlock$Limitation.class
+org\boudnik\data\platform\Cache$Call.class
+org\boudnik\data\platform\DataBlock.class
+org\boudnik\data\platform\OBJ$DOUBLE.class
+org\boudnik\data\platform\DataBlock$Limitation$Value.class
