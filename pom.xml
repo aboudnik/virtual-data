@@ -9,6 +9,7 @@
     <properties>
         <junit.version>4.12</junit.version>
         <joinery-dataframe.version>1.8</joinery-dataframe.version>
+        <poi.version>3.15</poi.version>
     </properties>
 
     <developers>
@@ -45,6 +46,13 @@
                 <groupId>joinery</groupId>
                 <artifactId>joinery-dataframe</artifactId>
                 <version>${joinery-dataframe.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+                <scope>runtime</scope>
             </dependency>
 
             <!--<dependency>-->

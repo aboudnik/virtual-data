@@ -25,6 +25,11 @@
             <artifactId>joinery-dataframe</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+        </dependency>
+
         <!--
                 <dependency>
                     <groupId>com.facebook.presto</groupId>
