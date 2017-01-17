@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>timeline</artifactId>
+        <artifactId>virtual-data</artifactId>
         <groupId>org.boudnik</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
