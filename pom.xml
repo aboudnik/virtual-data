@@ -6,10 +6,20 @@
     <artifactId>virtual-data</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <description>Virtual Data Platform for java</description>
+    <url>http://not-yet-set.com</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
     <properties>
         <junit.version>4.12</junit.version>
-        <joinery-dataframe.version>1.8</joinery-dataframe.version>
         <poi.version>3.15</poi.version>
+        <joinery-dataframe.version>1.9-SNAPSHOT</joinery-dataframe.version>
     </properties>
 
     <developers>
@@ -21,25 +31,18 @@
 
     <packaging>pom</packaging>
     <modules>
-        <!--<module>joinery-dataframe</module>-->
+        <module>joinery-dataframe</module>
         <module>data-platform</module>
     </modules>
-
-
-    <repositories>
-        <repository>
-            <id>libs-milestone</id>
-            <url>https://repo.spring.io/libs-milestone/</url>
-        </repository>
-
-    </repositories>
-
+    
     <dependencyManagement>
         <dependencies>
+
             <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+                <scope>compile</scope>
             </dependency>
 
             <dependency>
@@ -49,58 +52,11 @@
             </dependency>
 
             <dependency>
-                <groupId>org.apache.poi</groupId>
-                <artifactId>poi</artifactId>
-                <version>${poi.version}</version>
-                <scope>runtime</scope>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
             </dependency>
-
-            <!--<dependency>-->
-                <!--<groupId>com.google.code.gson</groupId>-->
-                <!--<artifactId>gson</artifactId>-->
-                <!--<version>2.3.1</version>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.apache.ignite</groupId>-->
-                <!--<artifactId>ignite-core</artifactId>-->
-                <!--<version>${ignite.version}</version>-->
-                <!--<scope>${ignite.scope}</scope>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.apache.ignite</groupId>-->
-                <!--<artifactId>ignite-slf4j</artifactId>-->
-                <!--<version>${ignite.version}</version>-->
-                <!--<scope>${ignite.scope}</scope>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.apache.ignite</groupId>-->
-                <!--<artifactId>ignite-spring</artifactId>-->
-                <!--<version>${ignite.version}</version>-->
-                <!--<scope>${ignite.scope}</scope>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.springframework</groupId>-->
-                <!--<artifactId>spring-core</artifactId>-->
-                <!--<version>${spring.version}</version>-->
-                <!--<scope>${spring.scope}</scope>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.springframework</groupId>-->
-                <!--<artifactId>spring-context</artifactId>-->
-                <!--<version>${spring.version}</version>-->
-                <!--<scope>${spring.scope}</scope>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.testng</groupId>-->
-                <!--<artifactId>testng</artifactId>-->
-                <!--<version>6.1.1</version>-->
-                <!--<scope>test</scope>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.mvel</groupId>-->
-                <!--<artifactId>mvel2</artifactId>-->
-                <!--<version>2.2.7.Final</version>-->
-            <!--</dependency>-->
         </dependencies>
     </dependencyManagement>
 
