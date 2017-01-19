@@ -1,6 +1,8 @@
 package org.boudnik.data.platform;
 
 import java.net.URL;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -14,9 +16,13 @@ public class DataBlock {
     private final URL url;
     private final Map<String, Limitation> limits;
 
-    public DataBlock(URL url, Map<String, Limitation> limits) {
+    public DataBlock(URL url, Limitation... limits) {
         this.url = url;
-        this.limits = limits;
+        this.limits = new HashMap<>();
+        for (Limitation limit : limits) {
+            Limitation replaced = this.limits.put(limit.name, limit);
+            assert replaced == null : "Non-unique limitation";
+        }
     }
 
     public Limitation getLimitation(String dimension) {
@@ -24,13 +30,19 @@ public class DataBlock {
     }
 
     public static abstract class Limitation {
+        private final String name;
+
+        Limitation(String name) {
+            this.name = name;
+        }
 
         public abstract boolean hasCommon(Limitation other);
 
         public static class Value extends Limitation {
             Comparable value;
 
-            public Value(Comparable value) {
+            public Value(String name, Comparable value) {
+                super(name);
                 this.value = value;
             }
 
@@ -49,7 +61,8 @@ public class DataBlock {
             Comparable min;
             Comparable max;
 
-            public Range(Comparable min, Comparable max) {
+            public Range(String name, Comparable min, Comparable max) {
+                super(name);
                 this.min = min;
                 this.max = max;
             }

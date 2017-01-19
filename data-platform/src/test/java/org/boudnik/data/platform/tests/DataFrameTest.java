@@ -1,6 +1,8 @@
 package org.boudnik.data.platform.tests;
 
 import joinery.DataFrame;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 import java.io.IOException;
 import java.util.Date;
@@ -11,7 +13,8 @@ import java.util.List;
  * @since 01/13/17 14:29
  */
 public class DataFrameTest {
-    public static void main(String[] args) throws IOException {
+    @Test
+    public void main() throws IOException {
         @SuppressWarnings("deprecation") List<Integer> col = DataFrame
                 .readCsv(String.format("%s?s=%s&a=%d&b=%d&c=%d&d=%d&e=%d&f=%d",
                         "http://real-chart.finance.yahoo.com/table.csv",

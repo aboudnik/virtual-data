@@ -1,6 +1,10 @@
 package org.boudnik.data.platform.tests;
 
 import org.boudnik.data.platform.Cache;
+import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -13,7 +17,8 @@ import java.util.function.Function;
  */
 public class CachedFunctionTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void main() {
         Cache cache = new Cache(new HashMap<>());
 
         List subList = cache.execute(to -> Arrays.asList(1, 2, 3, 4).subList(1, to), 3);
@@ -24,18 +29,13 @@ public class CachedFunctionTest {
 
         Function<Object, Integer> fortyTwo = o -> 42;
 
-        Integer execute = cache.execute(fortyTwo, 15);
-        System.out.println("execute = " + execute);
-        Integer execute1 = cache.execute(fortyTwo, 15);
-        System.out.println("execute1 = " + execute1);
-        Integer execute2 = cache.execute(fortyTwo, "15");
-        System.out.println("execute2 = " + execute2);
+        assertEquals((int) cache.execute(fortyTwo, 15), 42);
+        assertEquals((int) cache.execute(fortyTwo, 15), 42);
+        assertEquals((int) cache.execute(fortyTwo, "15"), 42);
 
-        Integer execute3 = cache.execute(ll -> 42, 1, 2, "15");
-        System.out.println("execute3 = " + execute3);
-
-        cache.execute(Function.identity(), (Object) null);
-        cache.execute(Function.identity(), (Object[]) new String[0]);
+        assertEquals((int) cache.execute(ll -> 42, 1, 2, "15"), 42);
+        assertNull(cache.execute(Function.identity(), (Object) null));
+        assertArrayEquals(cache.execute(Function.identity(), (Object[]) new String[0]), new String[0]);
 
         System.out.println("cache =\n" + cache);
         System.out.println();

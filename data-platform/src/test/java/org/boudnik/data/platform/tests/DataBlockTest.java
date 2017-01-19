@@ -23,18 +23,15 @@ public class DataBlockTest {
 
     @Before
     public void setup() throws MalformedURLException {
-        salesLoudoun2017JAN = new DataBlock(new URL("ftp://localhost/sales"), new HashMap<String, DataBlock.Limitation>(){{
-            put("date", new DataBlock.Limitation.Range("2017/01/01", "2017/01/31"));
-            put("zip", new DataBlock.Limitation.Value(20176));
-        }});
-        salesLoudoun2017FEB = new DataBlock(new URL("ftp://localhost/sales"), new HashMap<String, DataBlock.Limitation>(){{
-            put("date", new DataBlock.Limitation.Range("2017/02/01", "2017/02/28"));
-            put("zip", new DataBlock.Limitation.Value(20176));
-        }});
-        salesFairfax2017JAN = new DataBlock(new URL("ftp://localhost/sales"), new HashMap<String, DataBlock.Limitation>(){{
-            put("date", new DataBlock.Limitation.Range("2017/01/01", "2017/01/31"));
-            put("zip", new DataBlock.Limitation.Value(22030));
-        }});
+        salesLoudoun2017JAN = new DataBlock(new URL("ftp://localhost/sales"),
+                new DataBlock.Limitation.Range("date", "2017/01/01", "2017/01/31"),
+                new DataBlock.Limitation.Value("zip", 20176));
+        salesLoudoun2017FEB = new DataBlock(new URL("ftp://localhost/sales"),
+                new DataBlock.Limitation.Range("date", "2017/02/01", "2017/02/28"),
+                new DataBlock.Limitation.Value("zip", 20176));
+        salesFairfax2017JAN = new DataBlock(new URL("ftp://localhost/sales"),
+                new DataBlock.Limitation.Range("date", "2017/01/01", "2017/01/31"),
+                new DataBlock.Limitation.Value("zip", 22030));
     }
 
     @Test
