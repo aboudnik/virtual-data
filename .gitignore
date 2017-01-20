@@ -1,6 +1,5 @@
 target/
 *.iml
 .idea/
-joinery-dataframe/joinery-dataframe.iml
 
 
