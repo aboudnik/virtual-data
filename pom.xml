@@ -31,7 +31,6 @@
 
     <packaging>pom</packaging>
     <modules>
-        <module>joinery-dataframe</module>
         <module>data-platform</module>
     </modules>
     
